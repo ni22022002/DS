@@ -1,0 +1,44 @@
+-------------------DS-ASS1(RMI)------------
+
+to terminate the rmi server run this= netstat -aon | findstr :1099
+ u will get a pid number then to kill it run this and edit the pid:taskkill /PID <PID> /F
+TO run the code : javac *.java
+In first terminal: java ServerMain
+in Second terminal: java ChatClient
+
+
+
+Terminal
+
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass1> netstat -aon | findstr :1099
+  TCP    0.0.0.0:1099           0.0.0.0:0              LISTENING       16084
+  TCP    [::]:1099              [::]:0                 LISTENING       16084
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass1>  taskkill /PID 16084 /F   
+SUCCESS: The process with PID 16084 has been terminated.
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass1> java ServerMain
+Server is running...
+Received: hi
+
+
+
+
+
+
+
+
+-----------DS-ASS3-----------
+
+
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass2> $env:MPJ_HOME = "C:\Users\nisha\Downloads\mpj-v0_44\mpj-v0_44"
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass2> javac -cp "C:\Users\nisha\Downloads\mpj-v0_44\mpj-v0_44\lib\mpj.jar" DistributedSum.java                                                         
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass2> C:\Users\nisha\Downloads\mpj-v0_44\mpj-v0_44\bin\mpjrun.bat -np 4 -cp ".;C:\Users\nisha\Downloads\mpj-v0_44\mpj-v0_44\lib\mpj.jar" DistributedSum
+MPJ Express (0.44) is started in the multicore configuration
+Auto-filled input array:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+Process 0 local sum: 15
+Process 3 local sum: 90
+Process 1 local sum: 40
+Process 2 local sum: 65
+Final Sum: 210
+PS C:\Users\nisha\OneDrive\Desktop\DS\Ass2> 
+

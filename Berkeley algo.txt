@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class Berk {
+    
+    public static void main(String[] args) {
+        double masterTime = 100;
+
+        //double[] slaveTimes = new double[3];
+        double[] slaveTimes = {95,96,98};
+        // for(int i =0; i<slaveTimes.length; i++){
+        //     slaveTimes[i] = masterTime + Math.floor(Math.random()*10) - 5;
+        // }
+
+        System.out.println("Master Time:" + masterTime);
+        System.out.println("Slave Times:" + Arrays.toString(slaveTimes));
+
+        double totalDiff = 0;
+        for(double slaveTime : slaveTimes){
+            totalDiff += (slaveTime- masterTime);
+        }
+        double avgDiff = totalDiff / (slaveTimes.length+1);
+        masterTime += avgDiff;
+
+        for(int i=0;i<slaveTimes.length;i++){
+            slaveTimes[i] += (avgDiff -(slaveTimes[i] - masterTime+avgDiff));
+            //slaveTimes[i] = masterTime;
+        }
+        
+        System.out.println("Synchronized Master time :" + masterTime);
+        System.out.println("Synchronized slave times:"+ Arrays.toString(slaveTimes));
+    }    
+}
